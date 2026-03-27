@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovanni Aiello | CRE Research and Lending Intelligence</title>
+  <meta name="description" content="Commercial real estate research, CMBS analytics, and lending intelligence projects by Giovanni Aiello.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --paper: rgba(255, 252, 247, 0.88);
+      --ink: #1f2a2b;
+      --muted: #59686a;
+      --line: rgba(31, 42, 43, 0.12);
+      --accent: #0f766e;
+      --accent-2: #c96f3b;
+      --accent-3: #123c69;
+      --shadow: 0 20px 60px rgba(31, 42, 43, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 28%),
+        radial-gradient(circle at right 20%, rgba(201, 111, 59, 0.16), transparent 26%),
+        linear-gradient(180deg, #fbf8f2 0%, var(--bg) 100%);
+      min-height: 100vh;
+    }
+
+    .frame {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav a,
+    .cta,
+    .ghost {
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.6);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .nav a:hover,
+    .cta:hover,
+    .ghost:hover,
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(31, 42, 43, 0.22);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 26px;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(14px);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: 34px;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: 0.98;
+      max-width: 12ch;
+    }
+
+    .hero-copy p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 0 22px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta {
+      background: var(--accent);
+      color: #f6fffd;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      margin-top: 28px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.72);
+      padding: 18px 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.65rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-side {
+      padding: 24px;
+      background:
+        linear-gradient(145deg, rgba(18, 60, 105, 0.92), rgba(15, 118, 110, 0.88)),
+        #123c69;
+      color: #f6fbfb;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-side h2 {
+      margin: 0 0 10px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.4rem;
+    }
+
+    .hero-side p {
+      margin: 0;
+      line-height: 1.72;
+      color: rgba(246, 251, 251, 0.82);
+    }
+
+    .signal-list {
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .signal-list li {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.94rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 26px 0 14px;
+    }
+
+    .section-head h3 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.55rem;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 55ch;
+      line-height: 1.65;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card .kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .card h4 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.22rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .card .linkline {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--accent-3);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .about .panel {
+      padding: 24px;
+    }
+
+    .about h4 {
+      margin: 0 0 10px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .about p,
+    .about li {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 0.98rem;
+    }
+
+    .about ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .frame {
+        padding: 20px 14px 40px;
+      }
+
+      .hero-copy,
+      .hero-side,
+      .card,
+      .about .panel {
+        padding: 20px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .masthead {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header class="masthead">
+      <div class="brand">Giovanni Aiello</div>
+      <nav class="nav">
+        <a href="https://github.com/GiovanniAielloTC">GitHub</a>
+        <a href="https://github.com/GiovanniAielloTC/trepp-vacancy-pulse">Repo</a>
+        <a href="https://giovanniaiellotc.github.io/trepp-vacancy-pulse/">CMBS Site</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="panel hero-copy">
+        <div class="eyebrow">Commercial Real Estate Analytics</div>
+        <h1>Research-driven lending pages for modern CRE work.</h1>
+        <p>
+          I build property-level analytics, CMBS intelligence, and market-facing tools that turn raw real estate data into lending, underwriting, and asset management decisions.
+        </p>
+        <div class="actions">
+          <a class="cta" href="https://giovanniaiellotc.github.io/trepp-vacancy-pulse/">Open CMBS Vacancy Pulse</a>
+          <a class="ghost" href="https://github.com/GiovanniAielloTC/trepp-vacancy-pulse">View Code</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>3</strong>
+            <span>Connected Trepp data layers: loan, property, opex</span>
+          </div>
+          <div class="stat">
+            <strong>7</strong>
+            <span>Interactive multifamily property profiles live now</span>
+          </div>
+          <div class="stat">
+            <strong>1</strong>
+            <span>Public landing page for your active analytics work</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel hero-side">
+        <div>
+          <h2>Current focus</h2>
+          <p>
+            Vacancy Pulse shows how loan servicing data, property-level financials, and operating statements fit together, with live examples designed for lenders, investors, and internal credit teams.
+          </p>
+        </div>
+        <ul class="signal-list">
+          <li>Physical vs financial vacancy tracked side by side</li>
+          <li>Loan-level and property-level revenue and NOI comparisons</li>
+          <li>Detailed opex composition, value trends, and distress signals</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h3>Featured Work</h3>
+        <p>
+          The root page is now a true landing page. It gives you a clean entry point and directs visitors to the active sites and repositories that matter most.
+        </p>
+      </div>
+      <div class="grid">
+        <a class="card" href="https://giovanniaiellotc.github.io/trepp-vacancy-pulse/">
+          <div class="kicker">Live Site</div>
+          <h4>Trepp Vacancy Pulse</h4>
+          <p>
+            Educational CMBS property profiles that connect loan, property, and opex data into a lender-friendly narrative with charts, tables, and explainers.
+          </p>
+          <div class="linkline">Open the site</div>
+        </a>
+
+        <a class="card" href="https://github.com/GiovanniAielloTC/self_storage_trepp">
+          <div class="kicker">Research Repo</div>
+          <h4>Self Storage Trepp</h4>
+          <p>
+            Analysis of self-storage CMBS properties focused on vacancy, revenue, NOI, distress signals, and property-level performance patterns.
+          </p>
+          <div class="linkline">View repository</div>
+        </a>
+
+        <a class="card" href="https://github.com/GiovanniAielloTC/la-self-storage-map">
+          <div class="kicker">Mapping Tool</div>
+          <h4>LA Self Storage Map</h4>
+          <p>
+            Market-facing mapping work that adds geographic context to storage supply, submarket structure, and investment screening.
+          </p>
+          <div class="linkline">Explore project</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="panel">
+        <h4>What this landing page is for</h4>
+        <p>
+          This root domain now gives you a stable top-level entry point you can share in email, decks, or company materials. From here, visitors can move into the active project sites without landing on a GitHub 404.
+        </p>
+      </div>
+      <div class="panel">
+        <h4>Best next use cases</h4>
+        <ul>
+          <li>Use the root URL as the main link in presentations and signatures.</li>
+          <li>Point lenders or colleagues to Vacancy Pulse as the primary demo.</li>
+          <li>Add future projects here as new cards without changing the main URL.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Giovanni Aiello | CRE research, data products, and lending intelligence</span>
+      <span>Root site: giovanniaiellotc.github.io</span>
+    </footer>
+  </div>
+</body>
+</html>
