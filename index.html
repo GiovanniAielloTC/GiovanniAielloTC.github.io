@@ -65,7 +65,8 @@
 
     .nav a,
     .cta,
-    .ghost {
+    .ghost,
+    .mini-link {
       text-decoration: none;
       color: var(--ink);
       border: 1px solid var(--line);
@@ -79,6 +80,7 @@
     .nav a:hover,
     .cta:hover,
     .ghost:hover,
+    .mini-link:hover,
     .card:hover {
       transform: translateY(-2px);
       border-color: rgba(31, 42, 43, 0.22);
@@ -279,6 +281,19 @@
       color: var(--accent-3);
     }
 
+    .card-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mini-link {
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
     .about {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
@@ -362,8 +377,9 @@
       <div class="brand">Giovanni Aiello</div>
       <nav class="nav">
         <a href="https://github.com/GiovanniAielloTC">GitHub</a>
-        <a href="https://github.com/GiovanniAielloTC/trepp-vacancy-pulse">Repo</a>
-        <a href="https://giovanniaiellotc.github.io/trepp-vacancy-pulse/">CMBS Site</a>
+        <a href="https://giovanniaiellotc.github.io/trepp-vacancy-pulse/">Vacancy Pulse</a>
+        <a href="https://giovanniaiellotc.github.io/self_storage_trepp/">Self Storage</a>
+        <a href="https://giovanniaiellotc.github.io/LA-LODES-Map/">LODES</a>
       </nav>
     </header>
 
@@ -376,7 +392,7 @@
         </p>
         <div class="actions">
           <a class="cta" href="https://giovanniaiellotc.github.io/trepp-vacancy-pulse/">Open CMBS Vacancy Pulse</a>
-          <a class="ghost" href="https://github.com/GiovanniAielloTC/trepp-vacancy-pulse">View Code</a>
+          <a class="ghost" href="https://giovanniaiellotc.github.io/self_storage_trepp/">Open Self Storage Site</a>
         </div>
         <div class="stats">
           <div class="stat">
@@ -384,12 +400,12 @@
             <span>Connected Trepp data layers: loan, property, opex</span>
           </div>
           <div class="stat">
-            <strong>7</strong>
-            <span>Interactive multifamily property profiles live now</span>
+            <strong>4</strong>
+            <span>Live project sites linked from one root landing page</span>
           </div>
           <div class="stat">
             <strong>1</strong>
-            <span>Public landing page for your active analytics work</span>
+            <span>Root URL to remember instead of separate project links</span>
           </div>
         </div>
       </div>
@@ -398,13 +414,13 @@
         <div>
           <h2>Current focus</h2>
           <p>
-            Vacancy Pulse shows how loan servicing data, property-level financials, and operating statements fit together, with live examples designed for lenders, investors, and internal credit teams.
+            The root page now works as a hub across your active public work: CMBS Vacancy Pulse, Self Storage Trepp, LA Self Storage mapping, and LODES.
           </p>
         </div>
         <ul class="signal-list">
-          <li>Physical vs financial vacancy tracked side by side</li>
-          <li>Loan-level and property-level revenue and NOI comparisons</li>
-          <li>Detailed opex composition, value trends, and distress signals</li>
+          <li>Vacancy Pulse for loan, property, and opex relationships</li>
+          <li>Self Storage Trepp for storage-focused CMBS analysis</li>
+          <li>LODES and LA mapping tools for spatial demand context</li>
         </ul>
       </aside>
     </section>
@@ -423,25 +439,46 @@
           <p>
             Educational CMBS property profiles that connect loan, property, and opex data into a lender-friendly narrative with charts, tables, and explainers.
           </p>
-          <div class="linkline">Open the site</div>
+          <div class="card-links">
+            <span class="linkline">Open the site</span>
+            <a class="mini-link" href="https://github.com/GiovanniAielloTC/trepp-vacancy-pulse">Repo</a>
+          </div>
         </a>
 
-        <a class="card" href="https://github.com/GiovanniAielloTC/self_storage_trepp">
-          <div class="kicker">Research Repo</div>
+        <a class="card" href="https://giovanniaiellotc.github.io/self_storage_trepp/">
+          <div class="kicker">Live Site</div>
           <h4>Self Storage Trepp</h4>
           <p>
             Analysis of self-storage CMBS properties focused on vacancy, revenue, NOI, distress signals, and property-level performance patterns.
           </p>
-          <div class="linkline">View repository</div>
+          <div class="card-links">
+            <span class="linkline">Open the site</span>
+            <a class="mini-link" href="https://github.com/GiovanniAielloTC/self_storage_trepp">Repo</a>
+          </div>
         </a>
 
-        <a class="card" href="https://github.com/GiovanniAielloTC/la-self-storage-map">
-          <div class="kicker">Mapping Tool</div>
+        <a class="card" href="https://giovanniaiellotc.github.io/la-self-storage-map/">
+          <div class="kicker">Live Site</div>
           <h4>LA Self Storage Map</h4>
           <p>
             Market-facing mapping work that adds geographic context to storage supply, submarket structure, and investment screening.
           </p>
-          <div class="linkline">Explore project</div>
+          <div class="card-links">
+            <span class="linkline">Open the site</span>
+            <a class="mini-link" href="https://github.com/GiovanniAielloTC/la-self-storage-map">Repo</a>
+          </div>
+        </a>
+
+        <a class="card" href="https://giovanniaiellotc.github.io/LA-LODES-Map/">
+          <div class="kicker">Live Site</div>
+          <h4>LA LODES Map</h4>
+          <p>
+            Location-based employment and movement views that add local labor-market context to real estate demand, commute patterns, and market positioning.
+          </p>
+          <div class="card-links">
+            <span class="linkline">Open the site</span>
+            <a class="mini-link" href="https://github.com/GiovanniAielloTC/LA-LODES-Map">Repo</a>
+          </div>
         </a>
       </div>
     </section>
@@ -450,7 +487,7 @@
       <div class="panel">
         <h4>What this landing page is for</h4>
         <p>
-          This root domain now gives you a stable top-level entry point you can share in email, decks, or company materials. From here, visitors can move into the active project sites without landing on a GitHub 404.
+          This root domain now gives you a stable top-level entry point you can share in email, decks, or company materials. From here, visitors can move into the active live sites without needing to remember individual project URLs.
         </p>
       </div>
       <div class="panel">
@@ -458,6 +495,7 @@
         <ul>
           <li>Use the root URL as the main link in presentations and signatures.</li>
           <li>Point lenders or colleagues to Vacancy Pulse as the primary demo.</li>
+          <li>Use Self Storage and LODES as supporting examples without hunting for links.</li>
           <li>Add future projects here as new cards without changing the main URL.</li>
         </ul>
       </div>
